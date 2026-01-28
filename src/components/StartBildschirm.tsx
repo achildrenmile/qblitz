@@ -179,7 +179,7 @@ export function StartBildschirm({ onNavigate }: StartBildschirmProps) {
         </div>
 
         {/* Settings and Help buttons */}
-        <div className="flex gap-3 mt-4">
+        <div className="flex gap-3 mt-4 mb-8">
           <button
             onClick={() => onNavigate('einstellungen')}
             className="flex-1 p-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 hover:bg-slate-200 dark:hover:bg-slate-700/50 transition-colors flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
