@@ -36,6 +36,8 @@ export const texte = {
     statistikDesc: 'Fortschritt & Erfolge',
     einstellungen: 'Einstellungen',
     einstellungenDesc: 'App anpassen',
+    hilfe: 'Hilfe',
+    hilfeDesc: 'Anleitung & Tipps',
   },
 
   // Learning mode
@@ -227,6 +229,46 @@ export const texte = {
     copyrightText: 'Die durch den Betreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem österreichischen Urheberrecht.',
     disclaimerTitle: 'Hinweis',
     disclaimerText: 'Diese App dient dem Erlernen von Q-Gruppen für die Amateurfunkprüfung. Sie ersetzt nicht das offizielle Prüfungsmaterial.',
+  },
+
+  // Help
+  hilfe: {
+    titel: 'Hilfe & Anleitung',
+    weiter: 'Weiter',
+    zurueck: 'Zurück',
+    verstanden: 'Verstanden!',
+    schritt: 'Schritt',
+    von: 'von',
+
+    willkommenTitel: 'Willkommen bei QBlitz!',
+    willkommenText: 'QBlitz hilft dir, Q-Gruppen für die Amateurfunk-Prüfung zu lernen. Mit verschiedenen Trainingsmodi und intelligentem Lernalgorithmus wirst du schnell fit für die Prüfung.',
+
+    lernenTitel: 'Lernmodus - Karteikarten',
+    lernenText: 'Im Lernmodus siehst du Karteikarten, die du durch Antippen umdrehst. Sage ehrlich, ob du die Antwort wusstest. Der Algorithmus passt die Wiederholungen automatisch an deinen Lernfortschritt an.',
+
+    spacedRepTitel: 'Spaced Repetition',
+    spacedRepText: 'Karten werden in optimalen Abständen wiederholt: Neue Karten öfter, bekannte seltener. Bei richtiger Antwort steigt das Level (max. 5), bei falscher sinkt es. Level 5 = gemeistert!',
+
+    quizTitel: 'Quiz-Modus',
+    quizText: 'Multiple-Choice-Fragen testen dein Wissen. Du bekommst sofortiges Feedback und siehst bei Fehlern die richtige Antwort. Ideal zum Festigen des Gelernten.',
+
+    blitzTitel: 'Blitz-Modus',
+    blitzText: 'Gegen die Zeit! Beantworte so viele Fragen wie möglich. Bei Serien richtiger Antworten steigt dein Combo-Multiplikator. Perfekt für schnelles Wiederholen.',
+
+    pruefungTitel: 'Prüfungsmodus',
+    pruefungText: 'Simuliert die echte Prüfung: Nur prüfungsrelevante Q-Gruppen, keine Hilfen, keine Eselsbrücken. 70% müssen richtig sein zum Bestehen.',
+
+    gegensaetzeTitel: 'Gegensätze-Trainer',
+    gegensaetzeTitel2: 'Übe zusammengehörige Gegensatzpaare wie QRM/QRN (Störungsarten), QRO/QRP (Leistung) oder QRS/QRQ (Geschwindigkeit).',
+
+    nachschlagewerkTitel: 'Nachschlagewerk',
+    nachschlagewerkText: 'Alle Q-Gruppen zum Durchsuchen und Nachschlagen. Filtere nach Kategorien oder zeige nur prüfungsrelevante Codes an.',
+
+    punkteTitel: 'Punkte & Erfolge',
+    punkteText: 'Sammle Punkte durch richtiges Beantworten. Halte deinen Tagesstreak aufrecht und schalte über 25 verschiedene Erfolge frei!',
+
+    tippsTitel: 'Tipps für die Prüfung',
+    tippsText: 'Lerne regelmäßig kurze Einheiten statt lange Sessions. Nutze die Eselsbrücken. Übe besonders die prüfungsrelevanten Q-Gruppen. Viel Erfolg!',
   },
 
   // Privacy
