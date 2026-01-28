@@ -12,6 +12,7 @@ export interface UseEinstellungenReturn {
   toggleKategorie: (kategorie: QKategorie) => void
   setKategorien: (kategorien: QKategorie[]) => void
   setNurPruefungsrelevant: (wert: boolean) => void
+  setDunklerModus: (wert: boolean) => void
   setAnimationen: (wert: boolean) => void
   setSound: (wert: boolean) => void
   setTagesZiel: (anzahl: number) => void
@@ -84,6 +85,13 @@ export function useEinstellungen(): UseEinstellungenReturn {
     [updateEinstellungen]
   )
 
+  const setDunklerModus = useCallback(
+    (wert: boolean) => {
+      updateEinstellungen({ dunklerModus: wert })
+    },
+    [updateEinstellungen]
+  )
+
   const setAnimationen = useCallback(
     (wert: boolean) => {
       updateEinstellungen({ animationen: wert })
@@ -118,6 +126,7 @@ export function useEinstellungen(): UseEinstellungenReturn {
       toggleKategorie,
       setKategorien,
       setNurPruefungsrelevant,
+      setDunklerModus,
       setAnimationen,
       setSound,
       setTagesZiel,
@@ -131,6 +140,7 @@ export function useEinstellungen(): UseEinstellungenReturn {
       toggleKategorie,
       setKategorien,
       setNurPruefungsrelevant,
+      setDunklerModus,
       setAnimationen,
       setSound,
       setTagesZiel,

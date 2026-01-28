@@ -49,13 +49,13 @@ export function Statistik({ onBack }: StatistikProps) {
 
       {/* Tab switcher */}
       <div className="px-4 py-3">
-        <div className="flex gap-2 bg-slate-800 rounded-xl p-1">
+        <div className="flex gap-2 bg-slate-200 dark:bg-slate-800 rounded-xl p-1">
           <button
             onClick={() => setActiveTab('fortschritt')}
             className={`flex-1 py-2 rounded-lg font-medium transition-colors ${
               activeTab === 'fortschritt'
                 ? 'bg-primary-600 text-white'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             {texte.statistik.fortschritt}
@@ -65,7 +65,7 @@ export function Statistik({ onBack }: StatistikProps) {
             className={`flex-1 py-2 rounded-lg font-medium transition-colors ${
               activeTab === 'erfolge'
                 ? 'bg-primary-600 text-white'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             {texte.statistik.erfolge}
@@ -78,22 +78,22 @@ export function Statistik({ onBack }: StatistikProps) {
           {/* Main stats */}
           <Card variant="glass">
             <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-4 bg-slate-800/50 rounded-xl">
+              <div className="text-center p-4 bg-slate-100 dark:bg-slate-800/50 rounded-xl">
                 <div className="text-3xl font-bold text-funk-gold">
                   {spielstand.gesamtPunkte}
                 </div>
-                <div className="text-sm text-slate-400">
+                <div className="text-sm text-slate-500 dark:text-slate-400">
                   {texte.statistik.gesamtpunkte}
                 </div>
               </div>
-              <div className="text-center p-4 bg-slate-800/50 rounded-xl">
-                <div className="text-3xl font-bold text-white flex items-center justify-center gap-1">
+              <div className="text-center p-4 bg-slate-100 dark:bg-slate-800/50 rounded-xl">
+                <div className="text-3xl font-bold text-slate-900 dark:text-white flex items-center justify-center gap-1">
                   {spielstand.tagesStreak}
                   {spielstand.tagesStreak > 0 && (
                     <span className="text-orange-500">🔥</span>
                   )}
                 </div>
-                <div className="text-sm text-slate-400">{texte.statistik.streak}</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">{texte.statistik.streak}</div>
               </div>
             </div>
           </Card>
@@ -102,28 +102,28 @@ export function Statistik({ onBack }: StatistikProps) {
           <Card>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-slate-400">
+                <span className="text-slate-600 dark:text-slate-400">
                   {texte.statistik.laengsterStreak}
                 </span>
-                <span className="text-white font-semibold">
+                <span className="text-slate-900 dark:text-white font-semibold">
                   {spielstand.laengsterStreak} {texte.common.tage}
                 </span>
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-slate-400">
+                <span className="text-slate-600 dark:text-slate-400">
                   {texte.statistik.fragenBeantwortet}
                 </span>
-                <span className="text-white font-semibold">
+                <span className="text-slate-900 dark:text-white font-semibold">
                   {spielstand.fragenGesamt}
                 </span>
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-slate-400">{texte.statistik.genauigkeit}</span>
+                <span className="text-slate-600 dark:text-slate-400">{texte.statistik.genauigkeit}</span>
                 <span
                   className={`font-semibold ${
-                    genauigkeit >= 70 ? 'text-green-400' : 'text-yellow-400'
+                    genauigkeit >= 70 ? 'text-green-500' : 'text-yellow-500'
                   }`}
                 >
                   {genauigkeit}%
@@ -131,26 +131,26 @@ export function Statistik({ onBack }: StatistikProps) {
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-slate-400">{texte.statistik.blitzHighscore}</span>
+                <span className="text-slate-600 dark:text-slate-400">{texte.statistik.blitzHighscore}</span>
                 <span className="text-funk-gold font-semibold">
                   {spielstand.blitzHoechstpunkte}
                 </span>
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-slate-400">
+                <span className="text-slate-600 dark:text-slate-400">
                   {texte.statistik.quizAbgeschlossen}
                 </span>
-                <span className="text-white font-semibold">
+                <span className="text-slate-900 dark:text-white font-semibold">
                   {spielstand.quizAbgeschlossen}
                 </span>
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-slate-400">
+                <span className="text-slate-600 dark:text-slate-400">
                   {texte.statistik.pruefungenBestanden}
                 </span>
-                <span className="text-white font-semibold">
+                <span className="text-slate-900 dark:text-white font-semibold">
                   {spielstand.pruefungenBestanden}
                 </span>
               </div>
@@ -159,19 +159,19 @@ export function Statistik({ onBack }: StatistikProps) {
 
           {/* Learning progress */}
           <Card>
-            <h3 className="font-semibold text-white mb-4">
+            <h3 className="font-semibold text-slate-900 dark:text-white mb-4">
               {texte.statistik.qGruppenGelernt}
             </h3>
 
             <div className="text-center mb-4">
-              <span className="text-4xl font-bold text-white">
+              <span className="text-4xl font-bold text-slate-900 dark:text-white">
                 {Object.keys(spielstand.lernstatus).length}
               </span>
-              <span className="text-slate-400"> / {qgruppen.length}</span>
+              <span className="text-slate-500 dark:text-slate-400"> / {qgruppen.length}</span>
             </div>
 
             {/* Progress bar */}
-            <div className="h-3 bg-slate-700 rounded-full overflow-hidden mb-4">
+            <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden mb-4">
               <div
                 className="h-full bg-gradient-to-r from-primary-500 to-primary-400 transition-all"
                 style={{
@@ -182,24 +182,24 @@ export function Statistik({ onBack }: StatistikProps) {
 
             {/* Mastered count */}
             <div className="text-center text-sm">
-              <span className="text-green-400 font-semibold">{gemeistert}</span>
-              <span className="text-slate-400"> gemeistert (Level 5)</span>
+              <span className="text-green-500 font-semibold">{gemeistert}</span>
+              <span className="text-slate-500 dark:text-slate-400"> gemeistert (Level 5)</span>
             </div>
           </Card>
 
           {/* Level distribution */}
           <Card>
-            <h3 className="font-semibold text-white mb-4">
+            <h3 className="font-semibold text-slate-900 dark:text-white mb-4">
               {texte.statistik.levelVerteilung}
             </h3>
 
             <div className="space-y-2">
               {levelVerteilung.map((count, level) => (
                 <div key={level} className="flex items-center gap-3">
-                  <div className="w-24 text-sm text-slate-400">
+                  <div className="w-24 text-sm text-slate-600 dark:text-slate-400">
                     {level}: {getLevelName(level)}
                   </div>
-                  <div className="flex-1 h-4 bg-slate-700 rounded-full overflow-hidden">
+                  <div className="flex-1 h-4 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                     <div
                       className={`h-full ${getLevelFarbe(level)} transition-all`}
                       style={{
@@ -207,7 +207,7 @@ export function Statistik({ onBack }: StatistikProps) {
                       }}
                     />
                   </div>
-                  <div className="w-8 text-right text-sm text-slate-400">{count}</div>
+                  <div className="w-8 text-right text-sm text-slate-600 dark:text-slate-400">{count}</div>
                 </div>
               ))}
             </div>

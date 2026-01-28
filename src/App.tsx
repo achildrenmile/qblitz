@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import StartBildschirm from './components/StartBildschirm'
 import LernModus from './components/lern/LernModus'
 import QuizModus from './components/quiz/QuizModus'
@@ -8,6 +8,7 @@ import GegensaetzeTrainer from './components/gegensaetze/GegensaetzeTrainer'
 import Nachschlagewerk from './components/nachschlagewerk/Nachschlagewerk'
 import Statistik from './components/statistik/Statistik'
 import Einstellungen from './components/Einstellungen'
+import useEinstellungen from './hooks/useEinstellungen'
 
 export type Screen =
   | 'start'
@@ -22,6 +23,16 @@ export type Screen =
 
 function App() {
   const [screen, setScreen] = useState<Screen>('start')
+  const { einstellungen } = useEinstellungen()
+
+  // Apply dark mode class to html element
+  useEffect(() => {
+    if (einstellungen.dunklerModus) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [einstellungen.dunklerModus])
 
   const renderScreen = () => {
     switch (screen) {
@@ -49,7 +60,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       {renderScreen()}
     </div>
   )

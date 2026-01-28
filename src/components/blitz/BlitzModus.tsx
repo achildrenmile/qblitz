@@ -146,10 +146,10 @@ export function BlitzModus({ onBack }: BlitzModusProps) {
 
         <div className="flex-1 flex flex-col items-center justify-center px-4">
           <div className="text-8xl mb-6">⚡</div>
-          <h2 className="text-3xl font-bold text-white mb-2">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
             {texte.blitz.bereit}
           </h2>
-          <p className="text-slate-400 mb-8 text-center">
+          <p className="text-slate-500 dark:text-slate-400 mb-8 text-center">
             {einstellungen.blitzZeit} {texte.einstellungen.sekunden}
             <br />
             Beantworte so viele Fragen wie möglich!
@@ -196,9 +196,9 @@ export function BlitzModus({ onBack }: BlitzModusProps) {
   return (
     <div className="min-h-screen flex flex-col safe-bottom">
       {/* Timer bar */}
-      <div className="bg-slate-900 border-b border-slate-800 px-4 py-2">
+      <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-2">
         <div className="flex items-center justify-between mb-2">
-          <div className="text-2xl font-bold text-white">{punkte}</div>
+          <div className="text-2xl font-bold text-slate-900 dark:text-white">{punkte}</div>
           <Timer zeit={zeit} maxZeit={einstellungen.blitzZeit} size="md" />
           {combo > 1 && (
             <div className="flex items-center gap-1 text-funk-gold font-bold animate-pulse">
@@ -206,7 +206,7 @@ export function BlitzModus({ onBack }: BlitzModusProps) {
             </div>
           )}
         </div>
-        <div className="h-1 bg-slate-700 rounded-full overflow-hidden">
+        <div className="h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-yellow-500 to-orange-500 transition-all duration-1000 ease-linear"
             style={{ width: `${(zeit / einstellungen.blitzZeit) * 100}%` }}

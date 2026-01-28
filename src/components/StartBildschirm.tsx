@@ -49,8 +49,8 @@ export function StartBildschirm({ onNavigate }: StartBildschirmProps) {
         <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-primary-600 rounded-2xl shadow-lg shadow-primary-900/50">
           <span className="text-3xl font-bold text-white">Q</span>
         </div>
-        <h1 className="text-2xl font-bold text-white">{texte.appName}</h1>
-        <p className="text-slate-400 mt-1">{texte.appSubtitle}</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">{texte.appName}</h1>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">{texte.appSubtitle}</p>
       </header>
 
       {/* Stats bar */}
@@ -58,25 +58,25 @@ export function StartBildschirm({ onNavigate }: StartBildschirmProps) {
         <Card variant="glass" padding="sm">
           <div className="flex justify-around text-center">
             <div>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-2xl font-bold text-slate-900 dark:text-white">
                 {spielstand.gesamtPunkte}
               </div>
-              <div className="text-xs text-slate-400">{texte.statistik.gesamtpunkte}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">{texte.statistik.gesamtpunkte}</div>
             </div>
-            <div className="w-px bg-slate-700" />
+            <div className="w-px bg-slate-200 dark:bg-slate-700" />
             <div>
-              <div className="text-2xl font-bold text-white flex items-center justify-center gap-1">
+              <div className="text-2xl font-bold text-slate-900 dark:text-white flex items-center justify-center gap-1">
                 {spielstand.tagesStreak}
                 {spielstand.tagesStreak > 0 && <span className="text-orange-500">🔥</span>}
               </div>
-              <div className="text-xs text-slate-400">{texte.statistik.streak}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">{texte.statistik.streak}</div>
             </div>
-            <div className="w-px bg-slate-700" />
+            <div className="w-px bg-slate-200 dark:bg-slate-700" />
             <div>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-2xl font-bold text-slate-900 dark:text-white">
                 {Math.round((spielstand.fragenRichtig / Math.max(spielstand.fragenGesamt, 1)) * 100)}%
               </div>
-              <div className="text-xs text-slate-400">{texte.statistik.genauigkeit}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">{texte.statistik.genauigkeit}</div>
             </div>
           </div>
         </Card>
@@ -84,7 +84,7 @@ export function StartBildschirm({ onNavigate }: StartBildschirmProps) {
 
       {/* Mode buttons */}
       <div className="px-4 space-y-3">
-        <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">
+        <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
           Training
         </h2>
 
@@ -128,34 +128,34 @@ export function StartBildschirm({ onNavigate }: StartBildschirmProps) {
           color="from-pink-600 to-pink-700"
         />
 
-        <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mt-6 mb-2">
+        <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-6 mb-2">
           Mehr
         </h2>
 
         <div className="grid grid-cols-2 gap-3">
           <button
             onClick={() => onNavigate('nachschlagewerk')}
-            className="p-4 rounded-2xl bg-slate-800 border border-slate-700 hover:bg-slate-700/50 transition-colors text-left"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors text-left"
           >
             <span className="text-2xl mb-2 block">📖</span>
-            <h3 className="font-semibold text-white">{texte.start.nachschlagewerk}</h3>
-            <p className="text-slate-400 text-xs mt-1">{texte.start.nachschlagewerkDesc}</p>
+            <h3 className="font-semibold text-slate-900 dark:text-white">{texte.start.nachschlagewerk}</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">{texte.start.nachschlagewerkDesc}</p>
           </button>
 
           <button
             onClick={() => onNavigate('statistik')}
-            className="p-4 rounded-2xl bg-slate-800 border border-slate-700 hover:bg-slate-700/50 transition-colors text-left"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors text-left"
           >
             <span className="text-2xl mb-2 block">📊</span>
-            <h3 className="font-semibold text-white">{texte.statistik.titel}</h3>
-            <p className="text-slate-400 text-xs mt-1">{texte.start.statistikDesc}</p>
+            <h3 className="font-semibold text-slate-900 dark:text-white">{texte.statistik.titel}</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">{texte.start.statistikDesc}</p>
           </button>
         </div>
 
         {/* Settings button */}
         <button
           onClick={() => onNavigate('einstellungen')}
-          className="w-full mt-4 p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50 transition-colors flex items-center justify-center gap-2 text-slate-400 hover:text-white"
+          className="w-full mt-4 p-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 hover:bg-slate-200 dark:hover:bg-slate-700/50 transition-colors flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path

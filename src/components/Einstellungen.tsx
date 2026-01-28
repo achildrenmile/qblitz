@@ -30,6 +30,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
     setFragenProQuiz,
     toggleKategorie,
     setNurPruefungsrelevant,
+    setDunklerModus,
     setAnimationen,
     setSound,
     setTagesZiel,
@@ -51,9 +52,40 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
       <Header title={texte.einstellungen.titel} onBack={onBack} />
 
       <div className="px-4 py-4 space-y-4">
+        {/* Dark mode toggle - prominent at top */}
+        <Card>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">{einstellungen.dunklerModus ? '🌙' : '☀️'}</span>
+              <div>
+                <span className="text-slate-900 dark:text-white font-medium">
+                  {einstellungen.dunklerModus ? 'Dunkler Modus' : 'Heller Modus'}
+                </span>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  {einstellungen.dunklerModus ? 'Schont die Augen' : 'Für helle Umgebungen'}
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => setDunklerModus(!einstellungen.dunklerModus)}
+              className={`
+                w-14 h-7 rounded-full transition-colors relative
+                ${einstellungen.dunklerModus ? 'bg-primary-600' : 'bg-slate-300'}
+              `}
+            >
+              <div
+                className={`
+                  absolute top-1 w-5 h-5 bg-white rounded-full transition-transform shadow-sm
+                  ${einstellungen.dunklerModus ? 'translate-x-8' : 'translate-x-1'}
+                `}
+              />
+            </button>
+          </div>
+        </Card>
+
         {/* Blitz time */}
         <Card>
-          <h3 className="font-semibold text-white mb-3">
+          <h3 className="font-semibold text-slate-900 dark:text-white mb-3">
             {texte.einstellungen.blitzZeit}
           </h3>
           <div className="flex gap-2">
@@ -66,7 +98,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
                   ${
                     einstellungen.blitzZeit === zeit
                       ? 'bg-primary-600 text-white'
-                      : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
                   }
                 `}
               >
@@ -78,7 +110,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
 
         {/* Questions per quiz */}
         <Card>
-          <h3 className="font-semibold text-white mb-3">
+          <h3 className="font-semibold text-slate-900 dark:text-white mb-3">
             {texte.einstellungen.fragenProQuiz}
           </h3>
           <div className="flex gap-2">
@@ -91,7 +123,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
                   ${
                     einstellungen.fragenProQuiz === anzahl
                       ? 'bg-primary-600 text-white'
-                      : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
                   }
                 `}
               >
@@ -103,7 +135,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
 
         {/* Daily goal */}
         <Card>
-          <h3 className="font-semibold text-white mb-3">
+          <h3 className="font-semibold text-slate-900 dark:text-white mb-3">
             {texte.einstellungen.tagesZiel}
           </h3>
           <div className="flex gap-2">
@@ -116,7 +148,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
                   ${
                     einstellungen.tagesZiel === anzahl
                       ? 'bg-primary-600 text-white'
-                      : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
                   }
                 `}
               >
@@ -128,7 +160,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
 
         {/* Categories */}
         <Card>
-          <h3 className="font-semibold text-white mb-3">
+          <h3 className="font-semibold text-slate-900 dark:text-white mb-3">
             {texte.einstellungen.kategorien}
           </h3>
           <div className="flex flex-wrap gap-2">
@@ -141,7 +173,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
                   ${
                     einstellungen.kategorien.includes(key)
                       ? 'bg-primary-600 text-white'
-                      : 'bg-slate-700 text-slate-400 hover:bg-slate-600'
+                      : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-600'
                   }
                 `}
               >
@@ -156,7 +188,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
           <div className="space-y-4">
             {/* Exam relevant only */}
             <div className="flex items-center justify-between">
-              <span className="text-white">
+              <span className="text-slate-900 dark:text-white">
                 {texte.einstellungen.nurPruefungsrelevant}
               </span>
               <button
@@ -165,7 +197,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
                 }
                 className={`
                   w-12 h-6 rounded-full transition-colors relative
-                  ${einstellungen.nurPruefungsrelevant ? 'bg-primary-600' : 'bg-slate-600'}
+                  ${einstellungen.nurPruefungsrelevant ? 'bg-primary-600' : 'bg-slate-300 dark:bg-slate-600'}
                 `}
               >
                 <div
@@ -179,12 +211,12 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
 
             {/* Animations */}
             <div className="flex items-center justify-between">
-              <span className="text-white">{texte.einstellungen.animationen}</span>
+              <span className="text-slate-900 dark:text-white">{texte.einstellungen.animationen}</span>
               <button
                 onClick={() => setAnimationen(!einstellungen.animationen)}
                 className={`
                   w-12 h-6 rounded-full transition-colors relative
-                  ${einstellungen.animationen ? 'bg-primary-600' : 'bg-slate-600'}
+                  ${einstellungen.animationen ? 'bg-primary-600' : 'bg-slate-300 dark:bg-slate-600'}
                 `}
               >
                 <div
@@ -198,12 +230,12 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
 
             {/* Sound */}
             <div className="flex items-center justify-between">
-              <span className="text-white">{texte.einstellungen.sound}</span>
+              <span className="text-slate-900 dark:text-white">{texte.einstellungen.sound}</span>
               <button
                 onClick={() => setSound(!einstellungen.sound)}
                 className={`
                   w-12 h-6 rounded-full transition-colors relative
-                  ${einstellungen.sound ? 'bg-primary-600' : 'bg-slate-600'}
+                  ${einstellungen.sound ? 'bg-primary-600' : 'bg-slate-300 dark:bg-slate-600'}
                 `}
               >
                 <div
@@ -242,7 +274,7 @@ export function Einstellungen({ onBack }: EinstellungenProps) {
         onClose={() => setShowResetModal(false)}
         title={texte.einstellungen.datenZuruecksetzen}
       >
-        <p className="text-slate-300 mb-6">
+        <p className="text-slate-600 dark:text-slate-300 mb-6">
           {texte.einstellungen.wirklichZuruecksetzen}
         </p>
         <div className="flex gap-3">

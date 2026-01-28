@@ -27,17 +27,17 @@ export function QGruppeDetail({ qgruppe, onBack }: QGruppeDetailProps) {
         {/* Main card */}
         <Card variant="glass" padding="lg">
           <div className="text-center mb-6">
-            <div className="text-5xl font-bold text-white mb-2">{qgruppe.code}</div>
-            <div className="text-xl text-primary-400">{qgruppe.bedeutung}</div>
+            <div className="text-5xl font-bold text-slate-900 dark:text-white mb-2">{qgruppe.code}</div>
+            <div className="text-xl text-primary-600 dark:text-primary-400">{qgruppe.bedeutung}</div>
           </div>
 
           {/* Badges */}
           <div className="flex justify-center gap-2 mb-6">
-            <span className="text-xs px-3 py-1 bg-slate-700 text-slate-300 rounded-full">
+            <span className="text-xs px-3 py-1 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full">
               {kategorieLabels[qgruppe.kategorie]}
             </span>
             {qgruppe.pruefungsrelevant && (
-              <span className="text-xs px-3 py-1 bg-green-900/50 text-green-400 rounded-full">
+              <span className="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 rounded-full">
                 Prüfungsrelevant
               </span>
             )}
@@ -46,7 +46,7 @@ export function QGruppeDetail({ qgruppe, onBack }: QGruppeDetailProps) {
           {/* Level indicator */}
           <div className="flex justify-center items-center gap-3 mb-6">
             <LevelDots level={status.level} />
-            <span className="text-sm text-slate-400">
+            <span className="text-sm text-slate-500 dark:text-slate-400">
               Level {status.level} - {getLevelName(status.level)}
             </span>
           </div>
@@ -54,50 +54,50 @@ export function QGruppeDetail({ qgruppe, onBack }: QGruppeDetailProps) {
 
         {/* Question form */}
         <Card>
-          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">
+          <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
             {texte.nachschlagewerk.alsFrage}
           </h3>
-          <p className="text-white text-lg">{qgruppe.frage}</p>
+          <p className="text-slate-900 dark:text-white text-lg">{qgruppe.frage}</p>
         </Card>
 
         {/* Answer form */}
         <Card>
-          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">
+          <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
             {texte.nachschlagewerk.alsAntwort}
           </h3>
-          <p className="text-white text-lg">{qgruppe.antwort}</p>
+          <p className="text-slate-900 dark:text-white text-lg">{qgruppe.antwort}</p>
         </Card>
 
         {/* Mnemonic */}
         {qgruppe.eselsbruecke && (
           <Card variant="glass">
-            <h3 className="text-sm font-semibold text-yellow-400 uppercase tracking-wider mb-2">
+            <h3 className="text-sm font-semibold text-yellow-600 dark:text-yellow-400 uppercase tracking-wider mb-2">
               {texte.lernen.eselsbruecke}
             </h3>
-            <p className="text-white">{qgruppe.eselsbruecke}</p>
+            <p className="text-slate-900 dark:text-white">{qgruppe.eselsbruecke}</p>
           </Card>
         )}
 
         {/* Example */}
         {qgruppe.beispiel && (
           <Card variant="glass">
-            <h3 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-2">
+            <h3 className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-2">
               {texte.lernen.beispiel}
             </h3>
-            <p className="text-white">{qgruppe.beispiel}</p>
+            <p className="text-slate-900 dark:text-white">{qgruppe.beispiel}</p>
           </Card>
         )}
 
         {/* Opposite */}
         {gegensatz && (
           <Card variant="glass">
-            <h3 className="text-sm font-semibold text-pink-400 uppercase tracking-wider mb-2">
+            <h3 className="text-sm font-semibold text-pink-600 dark:text-pink-400 uppercase tracking-wider mb-2">
               Gegensatz
             </h3>
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-2xl font-bold text-white">{gegensatz.code}</span>
-                <span className="text-slate-400 ml-3">{gegensatz.bedeutung}</span>
+                <span className="text-2xl font-bold text-slate-900 dark:text-white">{gegensatz.code}</span>
+                <span className="text-slate-500 dark:text-slate-400 ml-3">{gegensatz.bedeutung}</span>
               </div>
               <div className="text-3xl">🔄</div>
             </div>
@@ -107,24 +107,24 @@ export function QGruppeDetail({ qgruppe, onBack }: QGruppeDetailProps) {
         {/* Statistics */}
         {(status.richtigGesamt > 0 || status.falschGesamt > 0) && (
           <Card>
-            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">
+            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">
               Deine Statistik
             </h3>
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-2xl font-bold text-green-400">
+                <div className="text-2xl font-bold text-green-500">
                   {status.richtigGesamt}
                 </div>
                 <div className="text-xs text-slate-500">Richtig</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-red-400">
+                <div className="text-2xl font-bold text-red-500">
                   {status.falschGesamt}
                 </div>
                 <div className="text-xs text-slate-500">Falsch</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-white">
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">
                   {status.richtigGesamt + status.falschGesamt > 0
                     ? Math.round(
                         (status.richtigGesamt /

@@ -35,7 +35,7 @@ export function Timer({
   const colorClass = useMemo(() => {
     if (zeit <= danger) return 'text-red-500'
     if (zeit <= warning) return 'text-yellow-500'
-    return 'text-white'
+    return 'text-slate-900 dark:text-white'
   }, [zeit, warning, danger])
 
   const animationClass = useMemo(() => {
@@ -65,7 +65,7 @@ export function Timer({
       </div>
 
       {showBar && maxZeit && (
-        <div className="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
           <div
             className={`h-full ${barColor} transition-all duration-1000 ease-linear rounded-full`}
             style={{ width: `${percentage}%` }}

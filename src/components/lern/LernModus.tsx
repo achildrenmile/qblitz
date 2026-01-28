@@ -91,10 +91,10 @@ export function LernModus({ onBack }: LernModusProps) {
           // All done for today
           <div className="flex-1 flex flex-col items-center justify-center text-center">
             <div className="text-6xl mb-4">🎉</div>
-            <h2 className="text-2xl font-bold text-white mb-2">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
               {texte.lernen.fertig}
             </h2>
-            <p className="text-slate-400 mb-8">
+            <p className="text-slate-500 dark:text-slate-400 mb-8">
               {faelligeKarten.length === 0 && neueKarten.length === 0
                 ? 'Alle Q-Gruppen gelernt!'
                 : `Komm später wieder für mehr Übung.`}
@@ -104,16 +104,16 @@ export function LernModus({ onBack }: LernModusProps) {
             <Card variant="glass" className="w-full max-w-sm">
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-slate-900 dark:text-white">
                     {faelligeKarten.length}
                   </div>
-                  <div className="text-sm text-slate-400">{texte.lernen.faellig}</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">{texte.lernen.faellig}</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-slate-900 dark:text-white">
                     {neueKarten.length}
                   </div>
-                  <div className="text-sm text-slate-400">{texte.lernen.neueKarten}</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">{texte.lernen.neueKarten}</div>
                 </div>
               </div>
             </Card>

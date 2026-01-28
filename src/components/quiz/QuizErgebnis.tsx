@@ -32,12 +32,12 @@ export function QuizErgebnis({
 
         {/* Score */}
         <div className="text-center mb-8">
-          <div className="text-5xl font-bold text-white mb-2">
+          <div className="text-5xl font-bold text-slate-900 dark:text-white mb-2">
             {richtig}/{gesamt}
           </div>
           <div
             className={`text-2xl font-semibold ${
-              istGut ? 'text-green-400' : 'text-yellow-400'
+              istGut ? 'text-green-500' : 'text-yellow-500'
             }`}
           >
             {formatProzent(richtig, gesamt)}
@@ -48,19 +48,19 @@ export function QuizErgebnis({
         <Card variant="glass" className="w-full max-w-sm mb-8">
           <div className="grid grid-cols-2 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-green-400">{richtig}</div>
-              <div className="text-sm text-slate-400">{texte.common.richtig}</div>
+              <div className="text-2xl font-bold text-green-500">{richtig}</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">{texte.common.richtig}</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-red-400">
+              <div className="text-2xl font-bold text-red-500">
                 {gesamt - richtig}
               </div>
-              <div className="text-sm text-slate-400">{texte.common.falsch}</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">{texte.common.falsch}</div>
             </div>
           </div>
 
           {/* Progress bar */}
-          <div className="mt-4 h-3 bg-slate-700 rounded-full overflow-hidden">
+          <div className="mt-4 h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
             <div
               className="h-full bg-gradient-to-r from-green-500 to-green-400 transition-all duration-500"
               style={{ width: `${prozent}%` }}
@@ -69,7 +69,7 @@ export function QuizErgebnis({
         </Card>
 
         {/* Message */}
-        <p className="text-slate-400 text-center mb-8 max-w-xs">
+        <p className="text-slate-500 dark:text-slate-400 text-center mb-8 max-w-xs">
           {istPerfekt
             ? 'Perfekt! Du hast alle Fragen richtig beantwortet!'
             : istGut

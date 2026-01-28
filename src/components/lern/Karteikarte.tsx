@@ -39,8 +39,8 @@ export function Karteikarte({ qgruppe, status, feedback }: KarteikarteProps) {
         <div
           className={`
             card-front absolute inset-0
-            bg-gradient-to-br from-slate-800 to-slate-900
-            border border-slate-700 rounded-3xl
+            bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900
+            border border-slate-200 dark:border-slate-700 rounded-3xl
             flex flex-col items-center justify-center p-6
             shadow-xl
             ${feedbackClass}
@@ -51,26 +51,26 @@ export function Karteikarte({ qgruppe, status, feedback }: KarteikarteProps) {
           </div>
 
           <div className="absolute top-4 right-4">
-            <span className="text-xs text-slate-500">
+            <span className="text-xs text-slate-400 dark:text-slate-500">
               {texte.level[status.level as keyof typeof texte.level] || getLevelName(status.level)}
             </span>
           </div>
 
-          <div className="text-7xl font-bold text-white mb-4 tracking-wide">
+          <div className="text-7xl font-bold text-slate-900 dark:text-white mb-4 tracking-wide">
             {qgruppe.code}
           </div>
 
-          <div className="text-slate-400 text-sm text-center">
+          <div className="text-slate-400 dark:text-slate-400 text-sm text-center">
             {texte.lernen.karteAntippen}
           </div>
 
           {/* Category badge */}
           <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-            <span className="text-xs px-2 py-1 bg-slate-700 rounded-full text-slate-400">
+            <span className="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-full text-slate-500 dark:text-slate-400">
               {texte.kategorien[qgruppe.kategorie as keyof typeof texte.kategorien]}
             </span>
             {qgruppe.pruefungsrelevant && (
-              <span className="text-xs px-2 py-1 bg-green-900/50 text-green-400 rounded-full">
+              <span className="text-xs px-2 py-1 bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 rounded-full">
                 Prüfung
               </span>
             )}
@@ -81,8 +81,8 @@ export function Karteikarte({ qgruppe, status, feedback }: KarteikarteProps) {
         <div
           className={`
             card-back absolute inset-0
-            bg-gradient-to-br from-primary-900 to-slate-900
-            border border-primary-800 rounded-3xl
+            bg-gradient-to-br from-primary-100 to-white dark:from-primary-900 dark:to-slate-900
+            border border-primary-200 dark:border-primary-800 rounded-3xl
             flex flex-col p-6
             shadow-xl overflow-y-auto
             ${feedbackClass}
@@ -90,57 +90,57 @@ export function Karteikarte({ qgruppe, status, feedback }: KarteikarteProps) {
         >
           {/* Code header */}
           <div className="text-center mb-4">
-            <span className="text-3xl font-bold text-white">{qgruppe.code}</span>
+            <span className="text-3xl font-bold text-slate-900 dark:text-white">{qgruppe.code}</span>
           </div>
 
           {/* Meaning */}
           <div className="flex-1 space-y-4">
             <div>
-              <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">
+              <div className="text-xs text-primary-600 dark:text-primary-400 uppercase tracking-wide mb-1">
                 {texte.nachschlagewerk.bedeutung}
               </div>
-              <div className="text-xl font-semibold text-white">
+              <div className="text-xl font-semibold text-slate-900 dark:text-white">
                 {qgruppe.bedeutung}
               </div>
             </div>
 
             <div>
-              <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">
+              <div className="text-xs text-primary-600 dark:text-primary-400 uppercase tracking-wide mb-1">
                 {texte.nachschlagewerk.alsFrage}
               </div>
-              <div className="text-slate-300">{qgruppe.frage}</div>
+              <div className="text-slate-700 dark:text-slate-300">{qgruppe.frage}</div>
             </div>
 
             <div>
-              <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">
+              <div className="text-xs text-primary-600 dark:text-primary-400 uppercase tracking-wide mb-1">
                 {texte.nachschlagewerk.alsAntwort}
               </div>
-              <div className="text-slate-300">{qgruppe.antwort}</div>
+              <div className="text-slate-700 dark:text-slate-300">{qgruppe.antwort}</div>
             </div>
 
             {/* Mnemonic */}
             {qgruppe.eselsbruecke && (
-              <div className="mt-4 p-3 bg-slate-800/50 rounded-xl">
-                <div className="text-xs text-yellow-400 uppercase tracking-wide mb-1">
+              <div className="mt-4 p-3 bg-yellow-50 dark:bg-slate-800/50 rounded-xl">
+                <div className="text-xs text-yellow-600 dark:text-yellow-400 uppercase tracking-wide mb-1">
                   {texte.lernen.eselsbruecke}
                 </div>
-                <div className="text-slate-300 text-sm">{qgruppe.eselsbruecke}</div>
+                <div className="text-slate-700 dark:text-slate-300 text-sm">{qgruppe.eselsbruecke}</div>
               </div>
             )}
 
             {/* Example */}
             {qgruppe.beispiel && (
-              <div className="p-3 bg-slate-800/50 rounded-xl">
-                <div className="text-xs text-blue-400 uppercase tracking-wide mb-1">
+              <div className="p-3 bg-blue-50 dark:bg-slate-800/50 rounded-xl">
+                <div className="text-xs text-blue-600 dark:text-blue-400 uppercase tracking-wide mb-1">
                   {texte.lernen.beispiel}
                 </div>
-                <div className="text-slate-300 text-sm">{qgruppe.beispiel}</div>
+                <div className="text-slate-700 dark:text-slate-300 text-sm">{qgruppe.beispiel}</div>
               </div>
             )}
           </div>
 
           {/* Tap hint */}
-          <div className="text-center mt-4 text-slate-500 text-xs">
+          <div className="text-center mt-4 text-slate-400 dark:text-slate-500 text-xs">
             {texte.lernen.karteAntippen}
           </div>
         </div>

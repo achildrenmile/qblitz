@@ -8,9 +8,9 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const variantClasses = {
-  default: 'bg-slate-800 border border-slate-700',
-  glass: 'bg-slate-800/50 backdrop-blur-sm border border-slate-700/50',
-  solid: 'bg-slate-800',
+  default: 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700',
+  glass: 'bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50',
+  solid: 'bg-white dark:bg-slate-800',
 }
 
 const paddingClasses = {
@@ -33,7 +33,7 @@ export function Card({
       className={`
         ${variantClasses[variant]}
         ${paddingClasses[padding]}
-        ${hover ? 'hover:bg-slate-700/50 cursor-pointer transition-colors' : ''}
+        ${hover ? 'hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors' : ''}
         rounded-2xl
         ${className}
       `}

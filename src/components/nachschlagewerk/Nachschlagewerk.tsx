@@ -94,11 +94,11 @@ export function Nachschlagewerk({ onBack }: NachschlagewerkProps) {
             placeholder={texte.nachschlagewerk.suchen}
             value={suchbegriff}
             onChange={e => setSuchbegriff(e.target.value)}
-            className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 pl-10
-                       text-white placeholder-slate-500 focus:outline-none focus:border-primary-500"
+            className="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 pl-10
+                       text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-primary-500"
           />
           <svg
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-500"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -113,7 +113,7 @@ export function Nachschlagewerk({ onBack }: NachschlagewerkProps) {
           {suchbegriff && (
             <button
               onClick={() => setSuchbegriff('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-white"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -134,7 +134,7 @@ export function Nachschlagewerk({ onBack }: NachschlagewerkProps) {
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
               ausgewaehlteKategorie === null
                 ? 'bg-primary-600 text-white'
-                : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-700'
             }`}
           >
             {texte.nachschlagewerk.alleKategorien}
@@ -148,7 +148,7 @@ export function Nachschlagewerk({ onBack }: NachschlagewerkProps) {
               className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
                 ausgewaehlteKategorie === kat
                   ? 'bg-primary-600 text-white'
-                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                  : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-700'
               }`}
             >
               {kategorieLabels[kat]}
@@ -161,8 +161,8 @@ export function Nachschlagewerk({ onBack }: NachschlagewerkProps) {
           onClick={() => setNurPruefungsrelevant(!nurPruefungsrelevant)}
           className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
             nurPruefungsrelevant
-              ? 'bg-green-900/50 text-green-400'
-              : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+              ? 'bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400'
+              : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-700'
           }`}
         >
           <svg
@@ -208,13 +208,13 @@ export function Nachschlagewerk({ onBack }: NachschlagewerkProps) {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <span className="text-xl font-bold text-primary-400 w-14">
+                    <span className="text-xl font-bold text-primary-600 dark:text-primary-400 w-14">
                       {q.code}
                     </span>
-                    <span className="text-white">{q.bedeutung}</span>
+                    <span className="text-slate-900 dark:text-white">{q.bedeutung}</span>
                   </div>
                   {q.pruefungsrelevant && (
-                    <span className="text-xs px-2 py-0.5 bg-green-900/50 text-green-400 rounded">
+                    <span className="text-xs px-2 py-0.5 bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 rounded">
                       Prüfung
                     </span>
                   )}
@@ -227,7 +227,7 @@ export function Nachschlagewerk({ onBack }: NachschlagewerkProps) {
           <div className="space-y-6">
             {Object.entries(gruppiertNachKategorie).map(([kategorie, items]) => (
               <div key={kategorie}>
-                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
                   {kategorieLabels[kategorie]} ({items.length})
                 </h3>
                 <div className="space-y-2">
@@ -240,13 +240,13 @@ export function Nachschlagewerk({ onBack }: NachschlagewerkProps) {
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <span className="text-xl font-bold text-primary-400 w-14">
+                          <span className="text-xl font-bold text-primary-600 dark:text-primary-400 w-14">
                             {q.code}
                           </span>
-                          <span className="text-white">{q.bedeutung}</span>
+                          <span className="text-slate-900 dark:text-white">{q.bedeutung}</span>
                         </div>
                         {q.pruefungsrelevant && (
-                          <span className="text-xs px-2 py-0.5 bg-green-900/50 text-green-400 rounded">
+                          <span className="text-xs px-2 py-0.5 bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 rounded">
                             Prüfung
                           </span>
                         )}

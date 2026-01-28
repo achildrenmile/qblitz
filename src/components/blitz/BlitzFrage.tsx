@@ -18,24 +18,24 @@ export function BlitzFrage({
       'w-full p-4 rounded-xl text-left font-medium transition-all duration-150 border-2'
 
     if (feedback === null) {
-      return `${baseClass} bg-slate-800 border-slate-700 active:border-primary-500 active:bg-slate-700 text-white`
+      return `${baseClass} bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 active:border-primary-500 active:bg-slate-50 dark:active:bg-slate-700 text-slate-900 dark:text-white`
     }
 
     const istRichtig = option === qgruppe.bedeutung
 
     if (istRichtig && feedback === 'richtig') {
-      return `${baseClass} bg-green-900/50 border-green-500 text-white scale-105`
+      return `${baseClass} bg-green-50 dark:bg-green-900/50 border-green-500 text-slate-900 dark:text-white scale-105`
     }
 
     if (istRichtig && feedback === 'falsch') {
-      return `${baseClass} bg-green-900/50 border-green-500 text-white`
+      return `${baseClass} bg-green-50 dark:bg-green-900/50 border-green-500 text-slate-900 dark:text-white`
     }
 
     if (!istRichtig && feedback === 'falsch') {
-      return `${baseClass} bg-slate-800/50 border-slate-700 text-slate-500`
+      return `${baseClass} bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500`
     }
 
-    return `${baseClass} bg-slate-800/50 border-slate-700 text-slate-500`
+    return `${baseClass} bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500`
   }
 
   return (
@@ -44,14 +44,14 @@ export function BlitzFrage({
       <div className="text-center mb-8">
         <div
           className={`
-            text-6xl font-bold text-white mb-2
-            ${feedback === 'richtig' ? 'text-green-400' : ''}
-            ${feedback === 'falsch' ? 'text-red-400 animate-shake' : ''}
+            text-6xl font-bold text-slate-900 dark:text-white mb-2
+            ${feedback === 'richtig' ? 'text-green-500 dark:text-green-400' : ''}
+            ${feedback === 'falsch' ? 'text-red-500 dark:text-red-400 animate-shake' : ''}
           `}
         >
           {qgruppe.code}
         </div>
-        <div className="text-slate-500 text-sm">Was bedeutet dieser Code?</div>
+        <div className="text-slate-500 dark:text-slate-500 text-sm">Was bedeutet dieser Code?</div>
       </div>
 
       {/* Options */}
