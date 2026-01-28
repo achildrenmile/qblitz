@@ -1,6 +1,7 @@
 import { Screen } from '../App'
 import { texte } from '../data/texte'
 import useSpielstand from '../hooks/useSpielstand'
+import useConfig from '../hooks/useConfig'
 import Card from './common/Card'
 
 interface StartBildschirmProps {
@@ -41,11 +42,33 @@ function ModeButton({ icon, title, description, onClick, color }: ModeButtonProp
 
 export function StartBildschirm({ onNavigate }: StartBildschirmProps) {
   const { spielstand } = useSpielstand()
+  const { config } = useConfig()
+
+  const hasLogo = config.parentSiteUrl && config.parentSiteLogo
 
   return (
     <div className="min-h-screen pb-8 safe-bottom">
+      {/* Parent site logo */}
+      {hasLogo && (
+        <div className="flex justify-center pt-4 pb-2">
+          <a
+            href={config.parentSiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={config.parentSiteName || 'Back to main site'}
+            className="block"
+          >
+            <img
+              src={config.parentSiteLogo}
+              alt={config.parentSiteName || 'Logo'}
+              className="h-[80px] md:h-[150px] w-auto object-contain"
+            />
+          </a>
+        </div>
+      )}
+
       {/* Header */}
-      <header className="pt-8 pb-6 px-4 text-center">
+      <header className={`${hasLogo ? 'pt-2' : 'pt-8'} pb-6 px-4 text-center`}>
         <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-primary-600 rounded-2xl shadow-lg shadow-primary-900/50">
           <span className="text-3xl font-bold text-white">Q</span>
         </div>
