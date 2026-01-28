@@ -8,6 +8,7 @@ import GegensaetzeTrainer from './components/gegensaetze/GegensaetzeTrainer'
 import Nachschlagewerk from './components/nachschlagewerk/Nachschlagewerk'
 import Statistik from './components/statistik/Statistik'
 import Einstellungen from './components/Einstellungen'
+import Footer from './components/common/Footer'
 import useEinstellungen from './hooks/useEinstellungen'
 
 export type Screen =
@@ -60,8 +61,11 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
-      {renderScreen()}
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+      <div className="flex-1">
+        {renderScreen()}
+      </div>
+      <Footer />
     </div>
   )
 }

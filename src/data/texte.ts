@@ -198,6 +198,51 @@ export const texte = {
     zeit: 'Zeit',
     verschiedenes: 'Verschiedenes',
   },
+
+  // Footer
+  footer: {
+    partOf: 'Teil von',
+    tools: 'Tools',
+    imprint: 'Impressum',
+    privacy: 'Datenschutz',
+    feedback: 'Feedback',
+  },
+
+  // Imprint
+  imprint: {
+    title: 'Impressum',
+    info: 'Angaben gemäß § 5 ECG und § 25 MedienG',
+    operator: 'Betreiber',
+    operatorName: 'Michael Linder',
+    operatorCallsign: 'OE8YML',
+    operatorAddress: 'Nötsch 219, 9611 Nötsch',
+    operatorCountry: 'Österreich',
+    contact: 'Kontakt',
+    contactEmail: 'oe8yml@rednil.at',
+    liabilityTitle: 'Haftung für Inhalte',
+    liabilityText: 'Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr. Diese Website dient ausschließlich Bildungszwecken für Amateurfunker.',
+    externalLinksTitle: 'Haftung für externe Links',
+    externalLinksText: 'Diese Website enthält Links zu externen Seiten. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.',
+    copyrightTitle: 'Urheberrecht',
+    copyrightText: 'Die durch den Betreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem österreichischen Urheberrecht.',
+    disclaimerTitle: 'Hinweis',
+    disclaimerText: 'Diese App dient dem Erlernen von Q-Gruppen für die Amateurfunkprüfung. Sie ersetzt nicht das offizielle Prüfungsmaterial.',
+  },
+
+  // Privacy
+  privacy: {
+    title: 'Datenschutzerklärung',
+    intro: 'Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Datenverarbeitung auf dieser Website.',
+    noDataTitle: 'Keine Datenerhebung',
+    noDataText: 'Diese Website ist ein reines Client-Side-Tool und erhebt, speichert oder verarbeitet keine personenbezogenen Daten.',
+    noDataList: 'Keine Formulare, keine Cookies, kein Tracking, keine serverseitige Verarbeitung.',
+    localStorageTitle: 'Lokale Speicherung',
+    localStorageText: 'Die App speichert Ihren Lernfortschritt, Einstellungen und Spielstand lokal in Ihrem Browser (localStorage). Diese Daten werden nicht an Server übertragen.',
+    cloudflareTitle: 'Cloudflare',
+    cloudflareText: 'Diese Website wird über Cloudflare bereitgestellt. Cloudflare kann technisch notwendige Verbindungsdaten verarbeiten.',
+    contactTitle: 'Kontakt',
+    contactText: 'Bei Fragen zur Datenverarbeitung wenden Sie sich an:',
+  },
 }
 
 // Helper to format time duration
